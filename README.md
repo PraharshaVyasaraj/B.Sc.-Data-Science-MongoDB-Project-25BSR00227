@@ -1,22 +1,60 @@
-**B.Sc. Data Science MongoDB Project | K Praharsha | 25BSR00227**
+<h1>B.Sc. Data Science MongoDB Project</h1>
 
-**What is this project?**
-This project is a collection of 35 practical problems and solutions using MongoDB. As a Data Science student, learning how to properly store and manage data is just as important as analyzing it. I built this repository to show how a database can be used to handle everyday business tasks and more complex operations.
+<p><b>Name:</b> K Praharsha<br>
+<b>Roll Number:</b> 25BSR00227</p>
 
-**How is the code organized?**
-The work is divided into two separate files to make it easy to read and follow.
+<hr>
 
-**File 1: MongoDB_Common_Problems_1_to_30.js**
-This file contains 30 solutions for common situations. I have written code for things like managing a coffee shop menu, tracking personal contacts, and keeping a log of gym equipment maintenance. These solutions focus on the basic skills of adding information to a database, looking up specific records, updating details when they change, and deleting data that is no longer useful.
+<h2>Project Overview</h2>
 
-**File 2: MongoDB_Advanced_Transactions_Set_13.js**
-This file contains 5 solutions for more difficult tasks. In these examples, I focus on protecting the quality of the data. This includes setting up strict rules so that only correctly formatted information can be saved. It also includes methods to ensure that when multiple things need to happen at once—like assigning a student to a room and updating the occupancy count—they either both finish successfully or the whole process stops to prevent errors.
+<p>
+This project contains a collection of 35 practical problems and their solutions using MongoDB. 
+As a Data Science student, understanding how to store, manage, and retrieve data efficiently is essential. 
+This repository demonstrates how MongoDB can be used to solve both simple and real-world data management problems.
+</p>
 
-**Goal of the Project**
-The main goal was to move beyond simple homework and create a set of tools that could actually work in the real world. Every query is written to be clean, logical, and easy to understand.
+<hr>
 
-**Project Details**
-Student Name: K Praharsha
-Roll Number: 25BSR00227
-Course: B.Sc. Data Science
-Database Tool: MongoDB Shell (mongosh)
+<h2>Project Structure</h2>
+
+<h3>File 1: MongoDB_Common_Problems_1_to_30.js</h3>
+<p>
+This file includes 30 scenarios covering common database operations such as inserting data, retrieving records, 
+updating existing information, and deleting unnecessary data. The examples are based on real-life systems like 
+coffee shop management, contact tracking, expense logging, and more.
+</p>
+
+<h3>File 2: MongoDB_Advanced_Transactions_Set_13.js</h3>
+<p>
+This file contains 5 advanced scenarios focusing on maintaining data consistency and reliability. 
+It includes validation rules and transaction-based operations where multiple steps must either complete 
+successfully together or not execute at all.
+</p>
+
+<hr>
+
+<h2>Objective</h2>
+
+<p>
+The goal of this project is to apply MongoDB concepts in practical situations and develop a clear understanding 
+of database operations used in real-world applications.
+</p>
+
+<hr>
+
+<h2>Technologies Used</h2>
+
+<ul>
+<li>MongoDB</li>
+<li>MongoDB Shell (mongosh)</li>
+</ul>
+
+<hr>
+
+<h2>Student Details</h2>
+
+<p>
+<b>Name:</b> K Praharsha<br>
+<b>Roll Number:</b> 25BSR00227<br>
+<b>Course:</b> B.Sc. Data Science
+</p>
