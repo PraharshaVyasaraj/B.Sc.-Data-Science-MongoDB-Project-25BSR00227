@@ -1,12 +1,22 @@
-use mongoProjectDB
 
-// ==========================================
-// B.Sc. Data Science MongoDB Project
-// K Praharsha | 25BSR00227
-// MongoDB_Common_Problems_1_to_30.js
-// ==========================================
+***
 
-// Problem 1: Coffee Shop Menu System
+**B.Sc. Data Science MongoDB Project | K Praharsha | 25BSR00227**
+
+**File 1: Common Database Scenarios (30 Questions)**
+
+***
+
+**Problem 1: Coffee Shop Menu System**
+
+1. Create a menu collection and insert one menu item document.
+2. Insert at least 5 menu items using insertMany() with different categories.
+3. Retrieve all items with availability true using find().
+4. Display only name and price using projection.
+5. Delete a menu item based on item_id.
+
+**Solution**
+```javascript
 db.menu.drop()
 db.menu.insertOne({ item_id: 1, name: "Espresso", category: "Coffee", price: 150, availability: true })
 db.menu.insertMany([
@@ -19,8 +29,20 @@ db.menu.insertMany([
 db.menu.find({ availability: true })
 db.menu.find({}, { name: 1, price: 1, _id: 0 })
 db.menu.deleteOne({ item_id: 3 })
+```
 
-// Problem 2: Contact Book System
+***
+
+**Problem 2: Contact Book System**
+
+1. Create a contacts collection and insert one contact document.
+2. Insert at least 5 contact records using insertMany().
+3. Retrieve all contacts from "Mumbai" city using find().
+4. Display only first_name, last_name, and phone using projection.
+5. Delete a contact based on contact_id.
+
+**Solution**
+```javascript
 db.contacts.drop()
 db.contacts.insertOne({ contact_id: 1, first_name: "John", last_name: "Doe", phone: "9876543210", email: "john@test.com", city: "Mumbai" })
 db.contacts.insertMany([
@@ -33,8 +55,20 @@ db.contacts.insertMany([
 db.contacts.find({ city: "Mumbai" })
 db.contacts.find({}, { first_name: 1, last_name: 1, phone: 1, _id: 0 })
 db.contacts.deleteOne({ contact_id: 6 })
+```
 
-// Problem 3: To-Do List Manager
+***
+
+**Problem 3: To-Do List Manager**
+
+1. Create a tasks collection and insert one task document.
+2. Insert at least 5 task records using insertMany() with different priorities.
+3. Retrieve all tasks where is_completed is false using find().
+4. Display only title and due_date using projection.
+5. Delete a task based on task_id.
+
+**Solution**
+```javascript
 db.tasks.drop()
 db.tasks.insertOne({ task_id: 1, title: "Learn MongoDB", description: "Practice queries", due_date: new Date("2024-05-10"), priority: "High", is_completed: false })
 db.tasks.insertMany([
@@ -47,8 +81,20 @@ db.tasks.insertMany([
 db.tasks.find({ is_completed: false })
 db.tasks.find({}, { title: 1, due_date: 1, _id: 0 })
 db.tasks.deleteOne({ task_id: 6 })
+```
 
-// Problem 4: Expense Tracker System
+***
+
+**Problem 4: Expense Tracker System**
+
+1. Create an expenses collection and insert one expense document.
+2. Insert at least 5 expense records using insertMany() with different categories.
+3. Retrieve all expenses with amount greater than 500 using find().
+4. Display only category, amount, and date using projection.
+5. Delete an expense based on expense_id.
+
+**Solution**
+```javascript
 db.expenses.drop()
 db.expenses.insertOne({ expense_id: 1, category: "Food", amount: 300, date: new Date("2024-05-01"), payment_method: "UPI", note: "Lunch" })
 db.expenses.insertMany([
@@ -61,8 +107,20 @@ db.expenses.insertMany([
 db.expenses.find({ amount: { $gt: 500 } })
 db.expenses.find({}, { category: 1, amount: 1, date: 1, _id: 0 })
 db.expenses.deleteOne({ expense_id: 6 })
+```
 
-// Problem 5: Movie Watchlist System
+***
+
+**Problem 5: Movie Watchlist System**
+
+1. Create a watchlist collection and insert one movie document.
+2. Insert at least 5 movie records using insertMany() with different genres.
+3. Retrieve all movies where watched is false using find().
+4. Display only title, genre, and imdb_rating using projection.
+5. Delete a movie based on movie_id.
+
+**Solution**
+```javascript
 db.watchlist.drop()
 db.watchlist.insertOne({ movie_id: 1, title: "Inception", genre: "Sci-Fi", release_year: 2010, imdb_rating: 8.8, watched: true })
 db.watchlist.insertMany([
@@ -75,8 +133,20 @@ db.watchlist.insertMany([
 db.watchlist.find({ watched: false })
 db.watchlist.find({}, { title: 1, genre: 1, imdb_rating: 1, _id: 0 })
 db.watchlist.deleteOne({ movie_id: 6 })
+```
 
-// Problem 6: Student Hostel Room Allotment
+***
+
+**Problem 6: Student Hostel Room Allotment**
+
+1. Create a hostel collection and insert one student document.
+2. Insert at least 5 student records using insertMany() with different room numbers.
+3. Retrieve all students from block "A" using find().
+4. Display only name, room_number, and block_name using projection.
+5. Delete a student record based on student_id.
+
+**Solution**
+```javascript
 db.hostel.drop()
 db.hostel.insertOne({ student_id: 101, name: "Rahul", room_number: 10, block_name: "A", bed_number: 1, check_in_date: new Date("2023-08-01") })
 db.hostel.insertMany([
@@ -89,8 +159,20 @@ db.hostel.insertMany([
 db.hostel.find({ block_name: "A" })
 db.hostel.find({}, { name: 1, room_number: 1, block_name: 1, _id: 0 })
 db.hostel.deleteOne({ student_id: 106 })
+```
 
-// Problem 7: Parking Lot Management
+***
+
+**Problem 7: Parking Lot Management**
+
+1. Create a parking collection and insert one parking slot document.
+2. Insert at least 5 parking slot records using insertMany().
+3. Retrieve all slots where is_occupied is false using find().
+4. Display only slot_id, floor, and vehicle_type using projection.
+5. Delete a parking slot based on slot_id.
+
+**Solution**
+```javascript
 db.parking.drop()
 db.parking.insertOne({ slot_id: 1, floor: 1, vehicle_type: "Car", is_occupied: true, vehicle_number: "MH12AB1234" })
 db.parking.insertMany([
@@ -103,8 +185,20 @@ db.parking.insertMany([
 db.parking.find({ is_occupied: false })
 db.parking.find({}, { slot_id: 1, floor: 1, vehicle_type: 1, _id: 0 })
 db.parking.deleteOne({ slot_id: 6 })
+```
 
-// Problem 8: Gift Card System
+***
+
+**Problem 8: Gift Card System**
+
+1. Create a giftcards collection and insert one gift card document.
+2. Insert at least 5 gift card records using insertMany().
+3. Retrieve all cards where is_used is false AND expiry_date is after today's date using find().
+4. Display only recipient_name, amount, and expiry_date using projection.
+5. Delete a gift card based on card_id.
+
+**Solution**
+```javascript
 db.giftcards.drop()
 db.giftcards.insertOne({ card_id: 1, recipient_name: "Aarav", sender_name: "Ravi", amount: 1000, purchase_date: new Date("2024-01-10"), expiry_date: new Date("2025-01-10"), is_used: false })
 db.giftcards.insertMany([
@@ -117,8 +211,20 @@ db.giftcards.insertMany([
 db.giftcards.find({ is_used: false, expiry_date: { $gt: new Date() } })
 db.giftcards.find({}, { recipient_name: 1, amount: 1, expiry_date: 1, _id: 0 })
 db.giftcards.deleteOne({ card_id: 6 })
+```
 
-// Problem 9: Courier Parcel Tracker
+***
+
+**Problem 9: Courier Parcel Tracker (Basic)**
+
+1. Create a parcels collection and insert one parcel document.
+2. Insert at least 5 parcel records using insertMany().
+3. Retrieve all parcels with delivery_status "Pending" using find().
+4. Display only sender_name, receiver_name, and shipping_cost using projection.
+5. Delete a parcel based on parcel_id.
+
+**Solution**
+```javascript
 db.parcels.drop()
 db.parcels.insertOne({ parcel_id: 1, sender_name: "Raj", receiver_name: "Simran", weight: 2.5, shipping_cost: 150, booking_date: new Date("2024-05-01"), delivery_status: "Shipped" })
 db.parcels.insertMany([
@@ -131,8 +237,20 @@ db.parcels.insertMany([
 db.parcels.find({ delivery_status: "Pending" })
 db.parcels.find({}, { sender_name: 1, receiver_name: 1, shipping_cost: 1, _id: 0 })
 db.parcels.deleteOne({ parcel_id: 6 })
+```
 
-// Problem 10: Fitness Workout Logger
+***
+
+**Problem 10: Fitness Workout Logger**
+
+1. Create a workouts collection and insert one workout document.
+2. Insert at least 5 workout records using insertMany().
+3. Retrieve all workouts with intensity "High" using find().
+4. Display only exercise_name, duration_minutes, and calories_burned using projection.
+5. Delete a workout based on workout_id.
+
+**Solution**
+```javascript
 db.workouts.drop()
 db.workouts.insertOne({ workout_id: 1, exercise_name: "Pushups", duration_minutes: 15, calories_burned: 100, date: new Date("2024-05-01"), intensity: "Medium" })
 db.workouts.insertMany([
@@ -145,8 +263,20 @@ db.workouts.insertMany([
 db.workouts.find({ intensity: "High" })
 db.workouts.find({}, { exercise_name: 1, duration_minutes: 1, calories_burned: 1, _id: 0 })
 db.workouts.deleteOne({ workout_id: 6 })
+```
 
-// Problem 11: Subscription Management System
+***
+
+**Problem 11: Subscription Management System**
+
+1. Insert 5 subscription documents using insertMany() with different plan types.
+2. Find all subscriptions with is_active true AND plan_type "Premium".
+3. Update the monthly_fee by increasing it by 100 for all Basic plan subscriptions.
+4. Delete all subscriptions where is_active is false AND renewal_date is before "2025-01-01".
+5. Find all subscriptions sorted by monthly_fee in descending order, displaying only user_name, plan_type, and monthly_fee.
+
+**Solution**
+```javascript
 db.subscriptions.drop()
 db.subscriptions.insertMany([
   { sub_id: 1, user_name: "Alice", plan_type: "Basic", monthly_fee: 199, start_date: new Date("2024-01-01"), renewal_date: new Date("2025-01-01"), is_active: true },
@@ -159,8 +289,20 @@ db.subscriptions.find({ is_active: true, plan_type: "Premium" })
 db.subscriptions.updateMany({ plan_type: "Basic" }, { $inc: { monthly_fee: 100 } })
 db.subscriptions.deleteMany({ is_active: false, renewal_date: { $lt: new Date("2025-01-01") } })
 db.subscriptions.find({}, { user_name: 1, plan_type: 1, monthly_fee: 1, _id: 0 }).sort({ monthly_fee: -1 })
+```
 
-// Problem 12: Employee Attendance Tracker
+***
+
+**Problem 12: Employee Attendance Tracker**
+
+1. Insert 5 attendance records using insertMany() with different statuses.
+2. Find all records where status is "Absent" AND department is "IT".
+3. Update the status to "Present" for all records where check_in_time is not null.
+4. Delete all records where date is before "2024-01-01" AND status is "Leave".
+5. Find all records with status "Present" sorted by date in ascending order.
+
+**Solution**
+```javascript
 db.attendance.drop()
 db.attendance.insertMany([
   { record_id: 1, emp_name: "John", department: "IT", date: new Date("2024-05-01"), status: "Present", check_in_time: "09:00" },
@@ -173,8 +315,20 @@ db.attendance.find({ status: "Absent", department: "IT" })
 db.attendance.updateMany({ check_in_time: { $ne: null } }, { $set: { status: "Present" } })
 db.attendance.deleteMany({ date: { $lt: new Date("2024-01-01") }, status: "Leave" })
 db.attendance.find({ status: "Present" }).sort({ date: 1 })
+```
 
-// Problem 13: Online Polling System
+***
+
+**Problem 13: Online Polling System**
+
+1. Insert 5 poll documents using insertMany() with different options arrays.
+2. Find all polls where is_active is true AND end_date is after today's date.
+3. Update the is_active to false for all polls where end_date is before today's date.
+4. Delete all polls where created_date is before "2023-01-01" AND is_active is false.
+5. Find all polls where the options array length is greater than 3 using $size operator.
+
+**Solution**
+```javascript
 db.polls.drop()
 db.polls.insertMany([
   { poll_id: 1, question: "Best DB?", options: ["MongoDB", "MySQL", "PostgreSQL"], votes: [150, 100, 120], created_date: new Date("2024-01-10"), end_date: new Date("2025-01-10"), is_active: true },
@@ -187,8 +341,20 @@ db.polls.find({ is_active: true, end_date: { $gt: new Date() } })
 db.polls.updateMany({ end_date: { $lt: new Date() } }, { $set: { is_active: false } })
 db.polls.deleteMany({ created_date: { $lt: new Date("2023-01-01") }, is_active: false })
 db.polls.find({ $expr: { $gt: [{ $size: "$options" }, 3] } })
+```
 
-// Problem 14: Vehicle Service Center System
+***
+
+**Problem 14: Vehicle Service Center System**
+
+1. Insert 5 service records using insertMany() with different service types.
+2. Find all records with status "InProgress" AND service_date is before "2026-08-01".
+3. Update the status to "Completed" for all records where service_date is before "2025-01-01".
+4. Delete all records with status "Completed" AND cost is less than 500.
+5. Find all records sorted by cost in descending order, displaying only customer_name, service_type, and cost.
+
+**Solution**
+```javascript
 db.service.drop()
 db.service.insertMany([
   { service_id: 1, customer_name: "Amit", vehicle_number: "MH12AB1234", service_type: "Oil Change", service_date: new Date("2025-05-10"), cost: 1500, status: "Scheduled" },
@@ -201,8 +367,20 @@ db.service.find({ status: "InProgress", service_date: { $lt: new Date("2026-08-0
 db.service.updateMany({ service_date: { $lt: new Date("2025-01-01") } }, { $set: { status: "Completed" } })
 db.service.deleteMany({ status: "Completed", cost: { $lt: 500 } })
 db.service.find({}, { customer_name: 1, service_type: 1, cost: 1, _id: 0 }).sort({ cost: -1 })
+```
 
-// Problem 15: Book Reading Challenge Tracker
+***
+
+**Problem 15: Book Reading Challenge Tracker**
+
+1. Insert 5 reading records using insertMany() with different genres.
+2. Find all records where is_completed is false AND pages_read is greater than 100.
+3. Update the is_completed to true for all records where completion_date is not null.
+4. Delete all records where start_date is before "2023-01-01" AND is_completed is false.
+5. Find all records where genre is "Fiction" AND is_completed is true.
+
+**Solution**
+```javascript
 db.reading.drop()
 db.reading.insertMany([
   { record_id: 1, member_name: "Alice", book_title: "Dune", genre: "Sci-Fi", pages_read: 150, total_pages: 500, start_date: new Date("2024-01-10"), completion_date: null, is_completed: false },
@@ -215,8 +393,20 @@ db.reading.find({ is_completed: false, pages_read: { $gt: 100 } })
 db.reading.updateMany({ completion_date: { $ne: null } }, { $set: { is_completed: true } })
 db.reading.deleteMany({ start_date: { $lt: new Date("2023-01-01") }, is_completed: false })
 db.reading.find({ genre: "Fiction", is_completed: true })
+```
 
-// Problem 16: Pharmacy Prescription Tracker
+***
+
+**Problem 16: Pharmacy Prescription Tracker**
+
+1. Insert 5 prescription documents using insertMany() with different statuses.
+2. Find all prescriptions with status "Active" AND expiry_date is after today's date.
+3. Update the status to "Expired" for all prescriptions where expiry_date is before today's date.
+4. Delete all prescriptions with status "Fulfilled" AND issue_date before "2024-01-01".
+5. Find all prescriptions sorted by issue_date in descending order, displaying only patient_name, medicine_name, and status.
+
+**Solution**
+```javascript
 db.prescriptions.drop()
 db.prescriptions.insertMany([
   { prescription_id: 1, patient_name: "John", doctor_name: "Dr. Smith", medicine_name: "Paracetamol", dosage: "500mg", issue_date: new Date("2024-05-01"), expiry_date: new Date("2025-05-01"), status: "Active" },
@@ -229,8 +419,20 @@ db.prescriptions.find({ status: "Active", expiry_date: { $gt: new Date() } })
 db.prescriptions.updateMany({ expiry_date: { $lt: new Date() } }, { $set: { status: "Expired" } })
 db.prescriptions.deleteMany({ status: "Fulfilled", issue_date: { $lt: new Date("2024-01-01") } })
 db.prescriptions.find({}, { patient_name: 1, medicine_name: 1, status: 1, _id: 0 }).sort({ issue_date: -1 })
+```
 
-// Problem 17: Cab Ride Booking System
+***
+
+**Problem 17: Cab Ride Booking System**
+
+1. Insert 5 ride documents using insertMany() with different ride statuses.
+2. Find all rides with ride_status "Requested" AND ride_date is today.
+3. Update the ride_status to "Completed" for all rides where drop_location is not null.
+4. Delete all rides with ride_status "Cancelled" AND ride_date before "2024-06-01".
+5. Find all rides where distance_km is greater than 10 AND fare is greater than 300.
+
+**Solution**
+```javascript
 db.rides.drop()
 db.rides.insertMany([
   { ride_id: 1, rider_name: "Aman", driver_name: "Ramesh", pickup_location: "Station", drop_location: "Airport", ride_date: new Date(), distance_km: 15, fare: 450, ride_status: "Requested" },
@@ -243,8 +445,20 @@ db.rides.find({ ride_status: "Requested", ride_date: { $gte: new Date(new Date()
 db.rides.updateMany({ drop_location: { $ne: null } }, { $set: { ride_status: "Completed" } })
 db.rides.deleteMany({ ride_status: "Cancelled", ride_date: { $lt: new Date("2024-06-01") } })
 db.rides.find({ distance_km: { $gt: 10 }, fare: { $gt: 300 } })
+```
 
-// Problem 18: Gym Equipment Maintenance Tracker
+***
+
+**Problem 18: Gym Equipment Maintenance Tracker**
+
+1. Insert 5 equipment documents using insertMany() with different conditions.
+2. Find all equipment where condition is "NeedsService" OR "OutOfOrder".
+3. Update the condition to "Good" for all equipment where last_maintenance_date is after "2025-01-01".
+4. Delete all equipment where purchase_date is before "2015-01-01" AND condition is "OutOfOrder".
+5. Find all equipment sorted by next_maintenance_date in ascending order.
+
+**Solution**
+```javascript
 db.gym.drop()
 db.gym.insertMany([
   { equip_id: 1, equip_name: "Treadmill", category: "Cardio", purchase_date: new Date("2020-01-01"), last_maintenance_date: new Date("2024-01-01"), next_maintenance_date: new Date("2024-07-01"), condition: "Good" },
@@ -257,8 +471,20 @@ db.gym.find({ condition: { $in: ["NeedsService", "OutOfOrder"] } })
 db.gym.updateMany({ last_maintenance_date: { $gt: new Date("2025-01-01") } }, { $set: { condition: "Good" } })
 db.gym.deleteMany({ purchase_date: { $lt: new Date("2015-01-01") }, condition: "OutOfOrder" })
 db.gym.find().sort({ next_maintenance_date: 1 })
+```
 
-// Problem 19: Online Course Review System
+***
+
+**Problem 19: Online Course Review System**
+
+1. Insert 5 review documents using insertMany() with different ratings.
+2. Find all reviews with rating greater than 4 AND likes_count greater than 10.
+3. Update the is_verified_purchase to true for all reviews where course_name contains "MongoDB".
+4. Delete all reviews where review_date is before "2024-01-01" AND rating is 1.
+5. Find all reviews sorted by rating in descending order, displaying only course_name, student_name, and rating.
+
+**Solution**
+```javascript
 db.reviews.drop()
 db.reviews.insertMany([
   { review_id: 1, course_name: "MongoDB Basics", student_name: "Alice", rating: 5, review_text: "Perfect", review_date: new Date("2024-05-01"), likes_count: 25, is_verified_purchase: true },
@@ -271,8 +497,20 @@ db.reviews.find({ rating: { $gt: 4 }, likes_count: { $gt: 10 } })
 db.reviews.updateMany({ course_name: { $regex: /MongoDB/i } }, { $set: { is_verified_purchase: true } })
 db.reviews.deleteMany({ review_date: { $lt: new Date("2024-01-01") }, rating: 1 })
 db.reviews.find({}, { course_name: 1, student_name: 1, rating: 1, _id: 0 }).sort({ rating: -1 })
+```
 
-// Problem 20: Hospital Bed Availability System
+***
+
+**Problem 20: Hospital Bed Availability System**
+
+1. Insert 5 bed documents using insertMany() with different bed types.
+2. Find all beds where is_occupied is false AND ward_name is "ICU".
+3. Update the is_occupied to true and set patient_name for beds where admission_date is today.
+4. Delete all beds where expected_discharge_date is before today's date AND is_occupied is true.
+5. Find all beds sorted by bed_type, displaying only ward_name, bed_type, and is_occupied.
+
+**Solution**
+```javascript
 db.hospital.drop()
 db.hospital.insertMany([
   { bed_id: 1, ward_name: "ICU", bed_type: "ICU", is_occupied: false, patient_name: null, admission_date: null, expected_discharge_date: null },
@@ -285,8 +523,20 @@ db.hospital.find({ is_occupied: false, ward_name: "ICU" })
 db.hospital.updateMany({ admission_date: new Date() }, { $set: { is_occupied: true, patient_name: "Emergency Admission" } })
 db.hospital.deleteMany({ expected_discharge_date: { $lt: new Date() }, is_occupied: true })
 db.hospital.find({}, { ward_name: 1, bed_type: 1, is_occupied: 1, _id: 0 }).sort({ bed_type: 1 })
+```
 
-// Problem 21: E-Commerce Wishlist System
+***
+
+**Problem 21: E-Commerce Wishlist System**
+
+1. Insert 5 wishlist documents using insertMany() with different product categories.
+2. Find all wishlist items where price is less than 2000 AND notify_when_available is true.
+3. Update the price by applying a 20% discount for all products in "Electronics" category.
+4. Delete all wishlist items where added_date is before "2024-01-01".
+5. Find all wishlist items grouped by customer_name and count how many items each customer has.
+
+**Solution**
+```javascript
 db.wishlist.drop()
 db.wishlist.insertMany([
   { wishlist_id: 1, customer_name: "Alice", product_name: "iPhone", product_category: "Electronics", price: 80000, added_date: new Date("2024-05-01"), notify_when_available: true },
@@ -299,8 +549,20 @@ db.wishlist.find({ price: { $lt: 2000 }, notify_when_available: true })
 db.wishlist.updateMany({ product_category: "Electronics" }, { $mul: { price: 0.80 } })
 db.wishlist.deleteMany({ added_date: { $lt: new Date("2024-01-01") } })
 db.wishlist.aggregate([{ $group: { _id: "$customer_name", item_count: { $sum: 1 } } }])
+```
 
-// Problem 22: Travel Itinerary Planner
+***
+
+**Problem 22: Travel Itinerary Planner**
+
+1. Insert 5 itinerary documents using insertMany() with different destinations.
+2. Find all itineraries where booking_status is "Confirmed" AND budget is greater than 50,000.
+3. Update the booking_status to "Cancelled" for all itineraries where trip_start_date is before today's date.
+4. Delete all itineraries with booking_status "Cancelled" AND trip_end_date before "2024-01-01".
+5. Find all itineraries where the activities array contains "Trekking" using array query operator.
+
+**Solution**
+```javascript
 db.travel.drop()
 db.travel.insertMany([
   { itinerary_id: 1, customer_name: "Aman", destination: "Goa", trip_start_date: new Date("2024-06-01"), trip_end_date: new Date("2024-06-10"), budget: 60000, activities: ["Beach", "Party"], hotel_name: "Sun Resort", booking_status: "Confirmed" },
@@ -313,8 +575,20 @@ db.travel.find({ booking_status: "Confirmed", budget: { $gt: 50000 } })
 db.travel.updateMany({ trip_start_date: { $lt: new Date() } }, { $set: { booking_status: "Cancelled" } })
 db.travel.deleteMany({ booking_status: "Cancelled", trip_end_date: { $lt: new Date("2024-01-01") } })
 db.travel.find({ activities: "Trekking" })
+```
 
-// Problem 23: Warehouse Inventory System
+***
+
+**Problem 23: Warehouse Inventory System**
+
+1. Insert 5 product documents using insertMany() with different categories.
+2. Find all products where quantity_in_stock is less than reorder_level.
+3. Update the quantity_in_stock by adding 100 to all products from supplier "ABC Corp".
+4. Delete all products where last_restock_date is before "2022-01-01" AND quantity_in_stock is 0.
+5. Create an index on category and quantity_in_stock to optimize inventory queries.
+
+**Solution**
+```javascript
 db.warehouse.drop()
 db.warehouse.insertMany([
   { product_id: 1, product_name: "Laptop", category: "Electronics", quantity_in_stock: 50, reorder_level: 20, supplier_name: "ABC Corp", last_restock_date: new Date("2024-05-01"), storage_location: "A1" },
@@ -327,8 +601,20 @@ db.warehouse.find({ $expr: { $lt: ["$quantity_in_stock", "$reorder_level"] } })
 db.warehouse.updateMany({ supplier_name: "ABC Corp" }, { $inc: { quantity_in_stock: 100 } })
 db.warehouse.deleteMany({ last_restock_date: { $lt: new Date("2022-01-01") }, quantity_in_stock: 0 })
 db.warehouse.createIndex({ category: 1, quantity_in_stock: 1 })
+```
 
-// Problem 24: Music Playlist Manager
+***
+
+**Problem 24: Music Playlist Manager**
+
+1. Insert 5 playlist documents using insertMany() with different songs arrays.
+2. Find all playlists where is_public is true AND play_count is greater than 100.
+3. Update the play_count by incrementing it by 1 for a specific playlist_id.
+4. Delete all playlists where created_date is before "2023-01-01" AND is_public is false.
+5. Use aggregation to find the average total_duration_minutes per user.
+
+**Solution**
+```javascript
 db.music.drop()
 db.music.insertMany([
   { playlist_id: 1, user_name: "Alice", playlist_name: "Jazz", songs: [{title: "Song A", artist: "Artist 1"}], created_date: new Date("2024-01-01"), total_duration_minutes: 60, is_public: true, play_count: 150 },
@@ -341,8 +627,20 @@ db.music.find({ is_public: true, play_count: { $gt: 100 } })
 db.music.updateOne({ playlist_id: 1 }, { $inc: { play_count: 1 } })
 db.music.deleteMany({ created_date: { $lt: new Date("2023-01-01") }, is_public: false })
 db.music.aggregate([{ $group: { _id: "$user_name", avg_duration: { $avg: "$total_duration_minutes" } } }])
+```
 
-// Problem 25: Banking Loan Application System
+***
+
+**Problem 25: Banking Loan Application System**
+
+1. Insert 5 loan documents using insertMany() with different loan types.
+2. Find all loans where approval_status is "Pending" AND credit_score is greater than 700.
+3. Update the approval_status to "Approved" for all loans where credit_score is greater than 750.
+4. Delete all loans where application_date is before "2023-01-01" AND approval_status is "Rejected".
+5. Use aggregation to calculate the average loan_amount per loan_type for approved loans only.
+
+**Solution**
+```javascript
 db.loans.drop()
 db.loans.insertMany([
   { loan_id: 1, applicant_name: "Rahul", loan_type: "Home", loan_amount: 5000000, interest_rate: 8.5, tenure_months: 240, application_date: new Date("2024-05-01"), approval_status: "Pending", credit_score: 750 },
@@ -355,8 +653,20 @@ db.loans.find({ approval_status: "Pending", credit_score: { $gt: 700 } })
 db.loans.updateMany({ credit_score: { $gt: 750 } }, { $set: { approval_status: "Approved" } })
 db.loans.deleteMany({ application_date: { $lt: new Date("2023-01-01") }, approval_status: "Rejected" })
 db.loans.aggregate([{ $match: { approval_status: "Approved" } }, { $group: { _id: "$loan_type", avg_amt: { $avg: "$loan_amount" } } }])
+```
 
-// Problem 26: Food Delivery Rider Tracking System
+***
+
+**Problem 26: Food Delivery Rider Tracking System**
+
+1. Insert 5 rider documents using insertMany() with different current_status values.
+2. Find all riders where current_status is "Available" AND average_rating is greater than 4.5.
+3. Update the earnings_today by adding 100 to all riders with total_deliveries greater than 20.
+4. Delete all riders where current_status is "Offline" AND total_deliveries is 0.
+5. Create a multikey index on the delivery_history array field.
+
+**Solution**
+```javascript
 db.riders.drop()
 db.riders.insertMany([
   { rider_id: 1, rider_name: "Raju", city: "Mumbai", vehicle_type: "Bike", total_deliveries: 50, average_rating: 4.8, current_status: "Available", earnings_today: 1200, delivery_history: ["O1", "O2"] },
@@ -369,8 +679,20 @@ db.riders.find({ current_status: "Available", average_rating: { $gt: 4.5 } })
 db.riders.updateMany({ total_deliveries: { $gt: 20 } }, { $inc: { earnings_today: 100 } })
 db.riders.deleteMany({ current_status: "Offline", total_deliveries: 0 })
 db.riders.createIndex({ delivery_history: 1 })
+```
 
-// Problem 27: Hotel Guest Feedback System
+***
+
+**Problem 27: Hotel Guest Feedback System**
+
+1. Insert 5 feedback documents using insertMany() with different ratings.
+2. Find all feedback where overall_rating is less than 3 AND would_recommend is false.
+3. Update the would_recommend to true for all feedback where overall_rating is greater than 4.
+4. Delete all feedback where feedback_date is before "2023-01-01" AND overall_rating is 1.
+5. Use aggregation to calculate the average cleanliness_rating and service_rating per hotel_name.
+
+**Solution**
+```javascript
 db.feedback.drop()
 db.feedback.insertMany([
   { feedback_id: 1, guest_name: "Aman", hotel_name: "Taj", overall_rating: 5, feedback_date: new Date("2024-05-01"), would_recommend: true, cleanliness_rating: 5, service_rating: 5 },
@@ -383,8 +705,20 @@ db.feedback.find({ overall_rating: { $lt: 3 }, would_recommend: false })
 db.feedback.updateMany({ overall_rating: { $gt: 4 } }, { $set: { would_recommend: true } })
 db.feedback.deleteMany({ feedback_date: { $lt: new Date("2023-01-01") }, overall_rating: 1 })
 db.feedback.aggregate([{ $group: { _id: "$hotel_name", avg_clean: { $avg: "$cleanliness_rating" }, avg_service: { $avg: "$service_rating" } } }])
+```
 
-// Problem 28: Event Ticket Booking System
+***
+
+**Problem 28: Event Ticket Booking System**
+
+1. Insert 5 booking documents using insertMany() with different ticket types.
+2. Find all bookings where event_date is after "2026-10-01" AND payment_status is "Paid".
+3. Update the payment_status to "Refunded" for all bookings where event_date is before today's date AND payment_status is "Paid".
+4. Delete all bookings with payment_status "Pending" AND booking_date before "2024-01-01".
+5. Use aggregation to calculate the total number_of_tickets sold per event_name.
+
+**Solution**
+```javascript
 db.events.drop()
 db.events.insertMany([
   { booking_id: 1, event_name: "Music Fest", event_date: new Date("2026-11-01"), ticket_type: "VIP", number_of_tickets: 2, payment_status: "Paid", booking_date: new Date("2024-05-01") },
@@ -397,8 +731,20 @@ db.events.find({ event_date: { $gt: new Date("2026-10-01") }, payment_status: "P
 db.events.updateMany({ event_date: { $lt: new Date() }, payment_status: "Paid" }, { $set: { payment_status: "Refunded" } })
 db.events.deleteMany({ payment_status: "Pending", booking_date: { $lt: new Date("2024-01-01") } })
 db.events.aggregate([{ $group: { _id: "$event_name", total_sold: { $sum: "$number_of_tickets" } } }])
+```
 
-// Problem 29: Social Media Follower Analytics
+***
+
+**Problem 29: Social Media Follower Analytics**
+
+1. Insert 5 follower documents using insertMany() with different interests arrays.
+2. Find all followers where engagement_score is greater than 80 AND is_active is true.
+3. Update the is_active to false for all followers where last_interaction_date is before "2025-01-01".
+4. Delete all followers where followed_since is before "2022-01-01" AND engagement_score is less than 20.
+5. Use aggregation with $unwind to find the most common interest among followers.
+
+**Solution**
+```javascript
 db.social.drop()
 db.social.insertMany([
   { follower_id: 1, follower_name: "Alice", engagement_score: 90, is_active: true, interests: ["Tech", "Gaming"], last_interaction_date: new Date("2024-05-15"), followed_since: new Date("2024-01-01") },
@@ -411,8 +757,20 @@ db.social.find({ engagement_score: { $gt: 80 }, is_active: true })
 db.social.updateMany({ last_interaction_date: { $lt: new Date("2025-01-01") } }, { $set: { is_active: false } })
 db.social.deleteMany({ followed_since: { $lt: new Date("2022-01-01") }, engagement_score: { $lt: 20 } })
 db.social.aggregate([{ $unwind: "$interests" }, { $group: { _id: "$interests", count: { $sum: 1 } } }, { $sort: { count: -1 } }, { $limit: 1 }])
+```
 
-// Problem 30: Manufacturing Defect Tracking System
+***
+
+**Problem 30: Manufacturing Defect Tracking System**
+
+1. Insert 5 defect records using insertMany() with different severity levels.
+2. Find all defects where severity is "High" AND status is "Open".
+3. Update the status to "Resolved" and set resolution_date to today for all defects where root_cause is identified.
+4. Delete all defects where detection_date is before "2022-01-01" AND status is "Resolved".
+5. Use aggregation to calculate the total quantity_affected per defect_type, sorted from highest to lowest.
+
+**Solution**
+```javascript
 db.factory.drop()
 db.factory.insertMany([
   { defect_id: 1, product_name: "Part A", severity: "Low", status: "Open", quantity_affected: 50, root_cause: null, detection_date: new Date("2024-05-01"), defect_type: "Cosmetic" },
@@ -425,3 +783,4 @@ db.factory.find({ severity: "High", status: "Open" })
 db.factory.updateMany({ root_cause: { $ne: null } }, { $set: { status: "Resolved", resolution_date: new Date() } })
 db.factory.deleteMany({ detection_date: { $lt: new Date("2022-01-01") }, status: "Resolved" })
 db.factory.aggregate([{ $group: { _id: "$defect_type", total: { $sum: "$quantity_affected" } } }, { $sort: { total: -1 } }])
+```
